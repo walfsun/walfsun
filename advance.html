@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title> Google Advanced Search</title>
+
+</head>
+<body>
+<body style="background-color:white">
+
+<ul>
+    <li><a href="images.html">Images</a></li>
+    <li><a href="index.html">Search</a></li>
+</ul>
+      <div class="logo1">
+      <a href="index.html">
+      <img alt="Google" src="google_logo_sm.png">
+      </a>
+      </div>
+
+    <div class ='left' >Advance Search</div>
+
+    <div class='left0' > Find pages with ... </div>
+    <div class='right0'> To do this in a search box</div>
+
+
+<form name="myForm"  autocomplete="on" id="myForm" onsubmit="return checkInput()" action="https://www.google.com/search">
+
+    <div class="left1">all these words: </div>
+    <div class="right1">Type the important words:  tricolor rat terrier</div>
+    <input class="searchbox1" type="text" name="as_q"
+           id="myInput1" title="Advance Search">
+
+    <div class="left2">this exact word or phrase:</div>
+    <div class="right2"> Put exact words in quotes:  "rat terrier"</div>
+    <input class="searchbox2" type="text" name="as_epq"
+           id="myInput2" title="Advance Search">
+
+    <div class="left2">any of these words:</div>
+    <div class="right2">Type OR between all the words you want:  miniature OR standard</div>
+    <input class="searchbox2" type="text" name="as_oq"
+           id="myInput3"  title="Advance Search">
+
+    <div class="left2">none of these words:</div>
+    <div class="right3">Put a minus sign just before words you don't want:</div>
+    <div class="right4">-rodent,-"Jack Russell"</div>
+    <input class="searchbox3" type="text" name="as_eq"
+           id="myInput4"  title="Advance Search">
+
+    <div class="buttons1">
+        <div style="text-align: center;">
+            <button name="myButton1" class="button1" type="button" onclick="return validateForm()">Advance Search</button>
+        </div>
+    </div>
+
+    <input type="submit" style="display: none" name="myForm">
+
+</form>
+<script>
+// Validate all inputs for space and return if there are all spaces
+function checkInput() {
+
+      var x1 = document.getElementById("myInput1").value;
+      var x2 = document.getElementById("myInput2").value;
+      var x3 = document.getElementById("myInput3").value;
+      var x4= document.getElementById("myInput4").value;
+
+       if (x1=='' && x2=='' && x3=='' && x4==''){
+          window.location = "index.html";
+          return false;
+       }else{
+          return true;
+          }
+        }
+ </script>
+
+<script>
+    function validateForm() {
+      var x1 = document.getElementById("myInput1").value;
+      var x2 = document.getElementById("myInput2").value;
+      var x3 = document.getElementById("myInput3").value;
+      var x4= document.getElementById("myInput4").value;
+
+      if (x1=='' && x2=='' && x3=='' && x4==''){
+       window.location = "index.html";
+       return false;
+        }else{
+       document.forms["myForm"].submit();
+       return true;
+       }
+       }
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Google</title>
+</head>
+<body>
+<ul>
+    <li><a href="images.html">Images</a></li>
+    <li><a href="advance.html">Advanced Search</a></li>
+</ul>
+<form name="myForm" action="https://www.google.com/search" >
+
+    <div class="logo">
+      <img alt="Google" src="google_search_logo.png">
+    </div>
+
+    <div class="bar">
+            <input class="searchbar" type="text" name="q"
+                   id="myInput" onkeypress="return myFunction(event)" title="Search"
+                   placeholder="Search Google or Type URL" >
+    </div>
+
+    <div class="buttons">
+        <div style="text-align: center;">
+            <button name="myButton" class="button" type="button" onclick="return validateForm()">Google Search</button>
+            <button name="myButton" class="button" type="button" onclick="return validateLucky()">I'm Feeling Lucky</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    function validateForm() {
+     var x = document.forms["myForm"]["q"].value;
+       if (x == "") {
+      return false;
+        }else{
+       document.forms["myForm"].submit();
+       }
+       }
+</script>
+<script>
+function myFunction(e) {
+        if (e.keyCode == 13) {
+          var tb = document.getElementById("myInput");
+           eval(tb.value);
+        return false;
+        }else{
+        document.getElementById("myForm").submit();
+        }
+       }
+</script>
+<script>
+    function validateLucky(){
+     var x = document.forms["myForm"]["q"].value;
+       if (x == "") {
+      return false;
+        }else{
+               document.myForm.action="http://www.google.com/search?q=term&btnI";
+               document.forms["myForm"].submit();
+       }
+       }
+</script>
+</body>
+</html>

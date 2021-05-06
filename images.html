@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title> New Tab</title>
+</head>
+<body>
+
+<ul>
+    <li><a href="index.html">Search</a></li>
+    <li><a href="advance.html">Advanced Search</a></li>
+</ul>
+
+
+<form name="myForm" action="https://www.google.com/images" >
+    <div class="logo">
+      <img alt="Google" src="Google_images_logo.png">
+    </div>
+
+    <div class="bar" >
+            <input class="searchbar" type="text" name="q"
+                   id="myInput" onkeypress="return myFunction(event)" title="Images"
+                   placeholder="Search Google or Type URL">
+                   <a href="#" class="magnify" onclick="validate()">
+                   <img src="google_magnifying_glass.png"></a>
+
+     </div>
+     <
+</form>
+<script>
+function myFunction(e) {
+        if (e.keyCode == 13) {
+          var tb = document.getElementById("myInput");
+           eval(tb.value);
+        return false;
+        }else{
+        document.getElementById("myForm").submit();
+        }
+       }
+</script>
+<script>
+    function validate(){
+       var x = document.forms["myForm"]["q"].value;
+       if (x == "") {
+       return false;
+       }else{
+        document.forms["myForm"].submit();
+        return true;
+         }
+         }
+</script>
+</body>
+</html>
